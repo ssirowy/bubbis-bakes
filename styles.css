@@ -1,0 +1,47 @@
+body {
+    align-items: center;
+    background-color: #edd6c0;
+    color: #7c7467;
+    display: flex;
+    flex-direction: column;
+    font-family: 'Luckiest Guy', cursive;
+}
+
+.bubbi {
+    font-size: 22px;
+}
+
+.title {
+    width: 500px;
+    height: 80px;
+}
+
+path {
+    fill: transparent;
+}
+  
+text {
+    fill: #7c7467;
+    font-size: 50px;
+}
+
+img {
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+    margin: 16px;
+    border-radius: 2px;
+    border: 6px solid white;
+}
+
+.portrait {
+    max-width: 200px;
+}
+
+.landscape {
+    max-height: 200px;
+}
+
+.images {
+    display: flex;
+    flex-wrap: wrap;    
+    width: 740px;
+}
