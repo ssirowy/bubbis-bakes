@@ -1,19 +1,117 @@
+:root {
+    --main-bg-color: #fcdecc;
+    --footer-color: #A55967;
+    --footer-text-color: #FBDECD;
+    --main-text-color: #4A0E80;
+    --secondary-text-color: #A55967;
+    --bubble-color: #FEF3E2;
+
+    font-family: "Raleway", sans-serif;
+  }
+
 body {
+    background-color: var(--main-bg-color);
+    display: grid;
+    height: 100vh;
+    grid-template-rows: 50px 1fr 80px;
+    margin: 0;
+    width: 100%;
+}
+
+a {
+    margin: 0 24px;
+}
+
+a:link {
+    text-decoration: none;
+}
+  
+a:visited {
+    text-decoration: none;
+}
+  
+a:hover {
+    text-decoration: underline;
+}
+
+header {
     align-items: center;
-    background-color: #edd6c0;
-    color: #7c7467;
+    border-bottom: 1px solid var(--footer-color);
+    display: flex;
+    font-size: 24px;
+    justify-content: center;
+}
+
+main {
+    overflow-y: auto;
+}
+
+.bubble {
+    align-items: center;
+    background-color: var(--bubble-color);
+    border: 3px solid var(--footer-color);
+    border-radius: 125px;
     display: flex;
     flex-direction: column;
-    font-family: 'Luckiest Guy', cursive;
+    padding: 24px;
+}
+
+.hero {
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+    margin: 16px;
+    border-radius: 2px;
+    border: 6px solid white;
+    max-height: 500px;
+}
+
+img.menu {
+    border-radius: 100px;
+}
+
+h1 {
+    color: var(--main-text-color);
+}
+
+h2 {
+    color: var(--main-text-color);
+}
+
+h4 {
+    color: var(--secondary-text-color);
+}
+
+section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.centered {
+    align-items: center;
+    display: flex;
+    height: 100%;
+    justify-content: center;
+    width: 100%;
+}
+
+footer {
+    align-items: center;
+    background-color: var(--footer-color);
+    color: var(--footer-text-color);
+    display: flex;
+    padding: 0 24px;
+}
+
+footer a {
+    font-size: 24px;
+}
+
+.footer-cta {
+    font-size: 42px;
+    font-weight: bold;
 }
 
 .bubbi {
     font-size: 22px;
-}
-
-.title {
-    width: 500px;
-    height: 80px;
 }
 
 path {
@@ -25,25 +123,12 @@ text {
     font-size: 55px;
 }
 
-img {
-    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
-    margin: 16px;
-    border-radius: 2px;
-    border: 6px solid white;
-}
-
 .portrait {
     max-width: 200px;
 }
 
 .landscape {
     max-height: 200px;
-}
-
-.images {
-    display: flex;
-    flex-wrap: wrap;
-    width: 740px;
 }
 
 @media only screen and (max-width: 800px) {

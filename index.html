@@ -6,13 +6,9 @@
   <title>Bubbi's Bakes</title>
   <base href="/" />
 
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-
-  <link rel="preload" as="style"
-    href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;700;800&display=swap" />
-
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;700;800&display=swap"
-    media="print" onload="this.media='all'" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="./styles.css">
 
@@ -21,25 +17,49 @@
 </head>
 
 <body>
-
-  <div class="title">
-    <svg viewBox="0 0 500 500">
-      <path id="curve" d="M73.2,148.6c4-6.1,65.5-96.8,178.6-95.6c111.3,1.2,170.8,90.3,175.1,97" />
-      <text width="500" x="58">
-        <textPath xlink:href="#curve">
-          Bubbi's Bakes
-        </textPath>
-      </text>
-    </svg>
-  </div>
-  <div class="bubbi">by Bubbi</div>
-  <div class="images">
-    <img src="img/boxes.jpg" class="portrait" />
-    <img src="img/ginger-snaps.jpg" class="portrait" />
-    <img src="img/more-cookies.jpg" class="portrait" />
-    <img src="img/packaging.jpg" class="portrait" />
-    <img src="img/xmas-cake.jpg" class="portrait" />
-  </div>
+  <header>
+    <a href="/">About</a>
+    <div class="title">Bubbi's Bakes</div>
+    <a href="/menu.html">Menu</a>
+  </header>
+  <main>
+    <section>
+      <div class="centered">
+        <img class="hero" src="/img/boxes.jpg">
+      </div>
+      <div class="centered">
+        <img class="hero" src="/img/boxes.jpg">
+      </div>
+    </section>
+    <section>
+      <div class="centered">
+        <div class="bubble">
+          <h2>What is a Bubbi?</h2>
+          <h4>Bubbi: the Yiddish word for Grandmother of Jewish or Eastern European origin</h4>
+          <p>You know the type, an endless supply of floral print housecoats, hot in the winter and cold in the summer, careful with her money, but generous with kisses and pinches of the cheek” (from BeyondBubbi.com). But this modern Bubbi is full of chocolate chips and sprinkles!</p>
+        </div>
+      </div>
+      <div class="centered">
+        <img class="hero" src="/img/xmas-cake.jpg">
+      </div>
+    </section>
+    <section>
+      <div class="centered">
+        <img class="hero" src="/img/xmas-cake.jpg">
+      </div>
+      <div class="centered">
+        <div class="bubble">
+          <h2>Bubbi's Boys</h2>
+          <p>With the help of Bubbi’s Boys, trusty sous chefs also known as grandsons, Bubbi bakes almost daily putting out dozens of cookies, cakes and other old-fashioned treats. We’d love to help you with your sweet cravings.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer>
+    <div class="footer-cta">Call, text, or email to place your order today!</div>
+    <div><a href="tel:9092298556"></a>(909)-229-8556</div>
+    <div><a href="mailto:ssirowy@aol.com">ssirowy@aol.com</a></div>
+  </footer>
 </body>
 
 </html>
