@@ -9,6 +9,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500..700&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="./styles.css">
 
@@ -18,47 +19,50 @@
 
 <body>
   <header>
-    <a href="/">About</a>
-    <div class="title">Bubbi's Bakes</div>
-    <a href="/menu.html">Menu</a>
+    <div class="nav">
+      <div class="nav-links">
+        <a class="nav-link is-active" href="/">About</a>
+        <a class="nav-link" href="/menu.html">Menu</a>
+      </div>
+      <div class="title">Bubbi's Bakes</div>
+      <div class="nav-links" aria-hidden="true"></div>
+    </div>
   </header>
   <main>
-    <section>
-      <div class="centered">
-        <img class="hero" src="/img/boxes.jpg">
-      </div>
-      <div class="centered">
-        <img class="hero" src="/img/boxes.jpg">
-      </div>
-    </section>
-    <section>
-      <div class="centered">
+    <div class="container stack">
+      <section class="split">
+        <div class="bubble">
+          <h1>Old‑world comfort. Modern‑day treats.</h1>
+          <p class="lede">Bubbi’s Bakes is made-to-order, handcrafted with love, and always ready to brighten your table — from cookie boxes to celebration cakes.</p>
+          <p class="cta-line">Ready to order? Call, text, or email — we’ll take care of the sweet part.</p>
+        </div>
+        <img class="hero" src="/img/boxes.jpg" alt="Assorted baked treats in a gift box">
+      </section>
+
+      <section class="split">
         <div class="bubble">
           <h2>What is a Bubbi?</h2>
-          <h4>Bubbi: the Yiddish word for Grandmother of Jewish or Eastern European origin</h4>
-          <p>You know the type, an endless supply of floral print housecoats, hot in the winter and cold in the summer, careful with her money, but generous with kisses and pinches of the cheek” (from BeyondBubbi.com). But this modern Bubbi is full of chocolate chips and sprinkles!</p>
+          <h4>Bubbi: the Yiddish word for grandmother of Jewish or Eastern European origin</h4>
+          <p>You know the type: an endless supply of floral housecoats, hot in the winter and cold in the summer, careful with her money — but generous with kisses and a pinch on the cheek (from BeyondBubbi.com). This modern Bubbi is full of chocolate chips and sprinkles.</p>
         </div>
-      </div>
-      <div class="centered">
-        <img class="hero" src="/img/xmas-cake.jpg">
-      </div>
-    </section>
-    <section>
-      <div class="centered">
-        <img class="hero" src="/img/xmas-cake.jpg">
-      </div>
-      <div class="centered">
+        <img class="hero" src="/img/xmas-cake.jpg" alt="Festive cake with colorful decorations">
+      </section>
+
+      <section class="split">
+        <img class="hero" src="/img/boxes.jpg" alt="Freshly packed cookie box ready to gift">
         <div class="bubble">
-          <h2>Bubbi's Boys</h2>
-          <p>With the help of Bubbi’s Boys, trusty sous chefs also known as grandsons, Bubbi bakes almost daily putting out dozens of cookies, cakes and other old-fashioned treats. We’d love to help you with your sweet cravings.</p>
+          <h2>Bubbi’s Boys</h2>
+          <p>With help from Bubbi’s Boys — trusty sous-chefs (also known as grandsons) — Bubbi bakes almost daily, turning out cookies, cakes, and old-fashioned favorites. We’d love to help with your next sweet craving.</p>
         </div>
-      </div>
-    </section>
+      </section>
+    </div>
   </main>
   <footer>
     <div class="footer-cta">Call, text, or email to place your order today!</div>
-    <div><a href="tel:9092298556"></a>(909)-229-8556</div>
-    <div><a href="mailto:ssirowy@aol.com">ssirowy@aol.com</a></div>
+    <div class="footer-actions">
+      <a class="footer-pill" href="tel:9092298556">(909)-229-8556</a>
+      <a class="footer-pill" href="mailto:ssirowy@aol.com">ssirowy@aol.com</a>
+    </div>
   </footer>
 </body>
 

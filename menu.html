@@ -9,6 +9,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500..700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="./styles.css">
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -17,77 +18,87 @@
 
 <body>
   <header>
-    <a href="/">About</a>
-    <div class="title">Bubbi's Bakes</div>
-    <a href="/menu.html">Menu</a>
+    <div class="nav">
+      <div class="nav-links">
+        <a class="nav-link" href="/">About</a>
+        <a class="nav-link is-active" href="/menu.html">Menu</a>
+      </div>
+      <div class="title">Bubbi's Bakes</div>
+      <div class="nav-links" aria-hidden="true"></div>
+    </div>
   </header>
   <main>
-    <div class="menu-intro">
-      <h1>Our Menu</h1>
-      <p>Handcrafted with love, using only the finest ingredients. All items are made fresh to order.</p>
+    <div class="container">
+      <div class="menu-intro">
+        <h1>Our Menu</h1>
+        <p class="lede">Handcrafted with love, using only the finest ingredients. Everything is made fresh to order.</p>
+        <p class="cta-line">Have something specific in mind? Call, text, or email — we love custom requests.</p>
+      </div>
+
+      <section class="menu-section">
+        <h2>Signature Cookies</h2>
+        <div class="menu-grid">
+          <div class="menu-item">
+            <img class="menu portrait" src="/img/xmas-cake.jpg" alt="Chocolate Chip Cookie">
+            <h3>Classic Chocolate Chip</h3>
+            <p>Chewy, buttery, and packed with premium chocolate.</p>
+          </div>
+          <div class="menu-item">
+            <img class="menu portrait" src="/img/xmas-cake.jpg" alt="Oatmeal Raisin Cookie">
+            <h3>Oatmeal Raisin</h3>
+            <p>Hearty oats, plump raisins, and a whisper of cinnamon.</p>
+          </div>
+          <div class="menu-item">
+            <img class="menu portrait" src="/img/xmas-cake.jpg" alt="Snickerdoodle Cookie">
+            <h3>Snickerdoodle</h3>
+            <p>Soft and pillowy, rolled in classic cinnamon sugar.</p>
+          </div>
+          <div class="menu-item">
+            <img class="menu portrait" src="/img/xmas-cake.jpg" alt="Double Chocolate Cookie">
+            <h3>Double Chocolate</h3>
+            <p>Rich cocoa cookie with melty chocolate chips throughout.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="menu-section">
+        <h2>Specialty Cakes</h2>
+        <div class="menu-grid">
+          <div class="menu-item">
+            <img class="menu portrait" src="/img/xmas-cake.jpg" alt="Birthday Cake">
+            <h3>Birthday Cakes</h3>
+            <p>Custom cakes for any celebration — flavors and sizes available.</p>
+          </div>
+          <div class="menu-item">
+            <img class="menu portrait" src="/img/xmas-cake.jpg" alt="Wedding Cake">
+            <h3>Wedding Cakes</h3>
+            <p>Elegant multi-tier cakes for your big day. Consultation recommended.</p>
+          </div>
+          <div class="menu-item">
+            <img class="menu portrait" src="/img/xmas-cake.jpg" alt="Cupcakes">
+            <h3>Cupcakes</h3>
+            <p>Perfect little treats with seasonal flavors and swirls of frosting.</p>
+          </div>
+          <div class="menu-item">
+            <img class="menu portrait" src="/img/xmas-cake.jpg" alt="Seasonal Specials">
+            <h3>Seasonal Specials</h3>
+            <p>Limited-time favorites featuring seasonal flavors and decorations.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="menu-section">
+        <h2>Custom Orders</h2>
+        <p class="custom-order-text">Looking for something special? We love custom orders. Reach out to share your vision, dietary needs, or occasion details.</p>
+      </section>
     </div>
-
-    <section class="menu-section">
-      <h2>Signature Cookies</h2>
-      <div class="menu-grid">
-        <div class="menu-item">
-          <img class="menu portrait" src="/img/xmas-cake.jpg" alt="Chocolate Chip Cookie">
-          <h3>Classic Chocolate Chip</h3>
-          <p>Our famous chewy chocolate chip cookies, made with premium chocolate and real butter.</p>
-        </div>
-        <div class="menu-item">
-          <img class="menu portrait" src="/img/xmas-cake.jpg" alt="Oatmeal Raisin Cookie">
-          <h3>Oatmeal Raisin</h3>
-          <p>Hearty oatmeal cookies studded with plump raisins and a hint of cinnamon.</p>
-        </div>
-        <div class="menu-item">
-          <img class="menu portrait" src="/img/xmas-cake.jpg" alt="Snickerdoodle Cookie">
-          <h3>Snickerdoodle</h3>
-          <p>Soft and pillowy cookies rolled in cinnamon sugar, a timeless favorite.</p>
-        </div>
-        <div class="menu-item">
-          <img class="menu portrait" src="/img/xmas-cake.jpg" alt="Double Chocolate Cookie">
-          <h3>Double Chocolate</h3>
-          <p>Rich chocolate cookies with chocolate chips, perfect for chocolate lovers.</p>
-        </div>
-      </div>
-    </section>
-
-    <section class="menu-section">
-      <h2>Specialty Cakes</h2>
-      <div class="menu-grid">
-        <div class="menu-item">
-          <img class="menu portrait" src="/img/xmas-cake.jpg" alt="Birthday Cake">
-          <h3>Birthday Cakes</h3>
-          <p>Custom-designed cakes for any celebration, available in various flavors and sizes.</p>
-        </div>
-        <div class="menu-item">
-          <img class="menu portrait" src="/img/xmas-cake.jpg" alt="Wedding Cake">
-          <h3>Wedding Cakes</h3>
-          <p>Elegant multi-tiered cakes, perfect for your special day. Consultation required.</p>
-        </div>
-        <div class="menu-item">
-          <img class="menu portrait" src="/img/xmas-cake.jpg" alt="Cupcakes">
-          <h3>Cupcakes</h3>
-          <p>Delightful individual treats, available in a variety of flavors and frostings.</p>
-        </div>
-        <div class="menu-item">
-          <img class="menu portrait" src="/img/xmas-cake.jpg" alt="Seasonal Specials">
-          <h3>Seasonal Specials</h3>
-          <p>Limited-time offerings featuring seasonal flavors and decorations.</p>
-        </div>
-      </div>
-    </section>
-
-    <section class="menu-section">
-      <h2>Custom Orders</h2>
-      <p class="custom-order-text">Looking for something special? We love creating custom orders! Contact us to discuss your specific needs, dietary requirements, or special occasions.</p>
-    </section>
   </main>
   <footer>
     <div class="footer-cta">Call, text, or email to place your order today!</div>
-    <div><a href="tel:9092298556">(909)-229-8556</a></div>
-    <div><a href="mailto:ssirowy@aol.com">ssirowy@aol.com</a></div>
+    <div class="footer-actions">
+      <a class="footer-pill" href="tel:9092298556">(909)-229-8556</a>
+      <a class="footer-pill" href="mailto:ssirowy@aol.com">ssirowy@aol.com</a>
+    </div>
   </footer>
 </body>
 

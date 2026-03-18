@@ -5,6 +5,13 @@
     --main-text-color: #4A0E80;
     --secondary-text-color: #A55967;
     --bubble-color: #FEF3E2;
+    --shadow: 0 18px 45px rgba(29, 14, 44, 0.12);
+    --shadow-soft: 0 10px 24px rgba(29, 14, 44, 0.10);
+    --radius: 22px;
+    --radius-lg: 34px;
+    --content-max: 1080px;
+    --gutter: clamp(16px, 3vw, 28px);
+    --heading-font: "Fraunces", serif;
 
     font-family: "Raleway", sans-serif;
   }
@@ -12,14 +19,21 @@
 body {
     background-color: var(--main-bg-color);
     display: grid;
-    height: 100vh;
-    grid-template-rows: 50px 1fr 80px;
+    min-height: 100svh;
+    grid-template-rows: auto 1fr auto;
     margin: 0;
     width: 100%;
+    color: var(--main-text-color);
+}
+
+a:focus-visible {
+    outline: 3px solid color-mix(in srgb, var(--footer-color), white 15%);
+    outline-offset: 3px;
+    border-radius: 10px;
 }
 
 a {
-    margin: 0 24px;
+    color: inherit;
 }
 
 a:link {
@@ -35,54 +49,163 @@ a:hover {
 }
 
 header {
+    border-bottom: 1px solid color-mix(in srgb, var(--footer-color), transparent 55%);
+    background: color-mix(in srgb, var(--bubble-color), transparent 25%);
+    backdrop-filter: blur(8px);
+}
+
+header .nav {
+    max-width: var(--content-max);
+    margin: 0 auto;
+    padding: 14px var(--gutter);
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
     align-items: center;
-    border-bottom: 1px solid var(--footer-color);
+    gap: 12px;
+}
+
+header .title {
+    font-family: var(--heading-font);
+    font-weight: 700;
+    letter-spacing: 0.01em;
+    font-size: clamp(18px, 2.4vw, 26px);
+}
+
+.nav-links {
     display: flex;
-    font-size: 24px;
-    justify-content: center;
+    align-items: center;
+    gap: clamp(10px, 2vw, 18px);
+}
+
+.nav > .nav-links:last-child {
+    justify-content: flex-end;
+}
+
+.nav-link {
+    display: inline-flex;
+    align-items: center;
+    padding: 10px 12px;
+    border-radius: 999px;
+    color: var(--secondary-text-color);
+    font-weight: 650;
+    text-decoration: none;
+    transition: background-color 160ms ease, transform 160ms ease;
+}
+
+.nav-link:hover {
+    text-decoration: none;
+    background: color-mix(in srgb, var(--footer-color), transparent 88%);
+    transform: translateY(-1px);
+}
+
+.nav-link.is-active {
+    color: var(--main-text-color);
+    background: color-mix(in srgb, var(--footer-color), transparent 82%);
 }
 
 main {
     overflow-y: auto;
 }
 
+.container {
+    max-width: var(--content-max);
+    margin: 0 auto;
+    padding: 28px var(--gutter) 36px;
+}
+
+.lede {
+    font-size: 16px;
+    color: color-mix(in srgb, var(--main-text-color), black 20%);
+    max-width: 62ch;
+}
+
+.cta-line {
+    margin-top: 10px;
+    font-weight: 650;
+    color: var(--secondary-text-color);
+}
+
+.stack {
+    display: grid;
+    gap: clamp(18px, 3vw, 30px);
+}
+
+.split {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: clamp(18px, 4vw, 42px);
+    align-items: center;
+    padding: clamp(16px, 3vw, 28px) 0;
+}
+
 .bubble {
     align-items: center;
     background-color: var(--bubble-color);
-    border: 3px solid var(--footer-color);
-    border-radius: 125px;
+    border: 2px solid color-mix(in srgb, var(--footer-color), transparent 35%);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-soft);
     display: flex;
     flex-direction: column;
-    padding: 24px;
+    padding: clamp(18px, 3vw, 28px);
+    line-height: 1.55;
+}
+
+.bubble h2 {
+    font-family: var(--heading-font);
+    font-weight: 700;
+    letter-spacing: 0.01em;
 }
 
 .hero {
-    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
-    margin: 16px;
-    border-radius: 2px;
-    border: 6px solid white;
-    max-height: 500px;
+    display: block;
+    width: 100%;
+    height: auto;
+    box-shadow: var(--shadow);
+    border-radius: var(--radius);
+    border: 8px solid rgba(255, 255, 255, 0.85);
+    max-height: 520px;
+    object-fit: cover;
 }
 
 img.menu {
-    border-radius: 100px;
+    border-radius: 999px;
 }
 
 h1 {
     color: var(--main-text-color);
+    font-family: var(--heading-font);
+    font-weight: 700;
+    font-size: clamp(32px, 4.2vw, 46px);
+    line-height: 1.08;
+    margin: 0 0 10px;
 }
 
 h2 {
+    color: var(--main-text-color);
+    font-family: var(--heading-font);
+    font-weight: 680;
+    font-size: clamp(22px, 3vw, 30px);
+    line-height: 1.15;
+    margin: 0 0 10px;
+}
+
+h3 {
+    margin: 0 0 8px;
+    font-family: var(--heading-font);
+    font-weight: 650;
+    font-size: 19px;
     color: var(--main-text-color);
 }
 
 h4 {
     color: var(--secondary-text-color);
+    margin: 0 0 12px;
+    font-weight: 650;
 }
 
-section {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+p {
+    margin: 0 0 12px;
+    color: color-mix(in srgb, var(--main-text-color), black 10%);
 }
 
 .centered {
@@ -98,16 +221,48 @@ footer {
     background-color: var(--footer-color);
     color: var(--footer-text-color);
     display: flex;
-    padding: 0 24px;
+    padding: 18px var(--gutter);
+    gap: 14px;
+    flex-wrap: wrap;
+    justify-content: space-between;
 }
 
 footer a {
     font-size: 24px;
+    color: var(--footer-text-color);
+    font-weight: 700;
 }
 
 .footer-cta {
-    font-size: 42px;
+    font-size: clamp(22px, 3.2vw, 34px);
     font-weight: bold;
+}
+
+.footer-actions {
+    display: inline-flex;
+    gap: 10px;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.footer-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 14px;
+    border-radius: 999px;
+    background: color-mix(in srgb, var(--footer-text-color), transparent 86%);
+    border: 1px solid color-mix(in srgb, var(--footer-text-color), transparent 70%);
+    text-decoration: none;
+    font-size: 18px;
+    line-height: 1;
+    transition: transform 160ms ease, background-color 160ms ease;
+}
+
+.footer-pill:hover {
+    text-decoration: none;
+    transform: translateY(-1px);
+    background: color-mix(in srgb, var(--footer-text-color), transparent 82%);
 }
 
 .bubbi {
@@ -131,23 +286,90 @@ text {
     max-height: 200px;
 }
 
+.menu-intro {
+    text-align: left;
+    padding: 10px 0 20px;
+}
+
+.menu-intro p {
+    max-width: 62ch;
+    margin: 0;
+    font-size: 16px;
+    color: color-mix(in srgb, var(--main-text-color), black 18%);
+}
+
+.menu-section {
+    padding: clamp(18px, 3vw, 26px) 0;
+}
+
+.menu-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: clamp(14px, 2.5vw, 22px);
+    margin-top: 14px;
+}
+
+.menu-item {
+    background: linear-gradient(
+        180deg,
+        color-mix(in srgb, var(--bubble-color), white 22%),
+        var(--bubble-color)
+    );
+    border: 1px solid color-mix(in srgb, var(--footer-color), transparent 55%);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-soft);
+    padding: 18px;
+    display: grid;
+    gap: 10px;
+    position: relative;
+    overflow: hidden;
+}
+
+.menu-item::after {
+    content: "";
+    position: absolute;
+    inset: -2px -2px auto -2px;
+    height: 10px;
+    background: radial-gradient(circle at 12px 5px, rgba(165, 89, 103, 0.55) 0 3px, transparent 3.5px),
+        radial-gradient(circle at 34px 6px, rgba(74, 14, 128, 0.35) 0 2.5px, transparent 3px),
+        radial-gradient(circle at 56px 4px, rgba(165, 89, 103, 0.45) 0 2.5px, transparent 3px);
+    opacity: 0.6;
+}
+
+.menu-item img.menu {
+    width: 96px;
+    height: 96px;
+    object-fit: cover;
+    border: 6px solid rgba(255, 255, 255, 0.85);
+    box-shadow: 0 12px 26px rgba(29, 14, 44, 0.12);
+    justify-self: center;
+}
+
+.custom-order-text {
+    max-width: 72ch;
+    margin: 0;
+}
+
 @media only screen and (max-width: 800px) {
-    .title {
-        width: 100%;
-        margin-bottom: 48px;
+    header .nav {
+        padding: 12px var(--gutter);
     }
 
-    .bubbi {
-        font-size: 36px;
+    .split {
+        grid-template-columns: 1fr;
+        padding: 18px 0;
     }
 
-    .images {
-        justify-content: center;
-        width: 100%;
+    .hero {
+        max-height: 420px;
     }
 
     .portrait {
         max-width: 90%;
+    }
+
+    footer {
+        justify-content: flex-start;
     }
 }
 
@@ -157,8 +379,18 @@ text {
         font-size: 22px;
     }
 
-    .title {
-        width: 100%;
-        margin-bottom: 0;
+    header .nav {
+        gap: 10px;
+        grid-template-columns: 1fr;
+        justify-items: center;
+    }
+
+    .nav-link {
+        padding: 9px 10px;
+    }
+
+    .nav-links {
+        justify-content: center;
+        flex-wrap: wrap;
     }
 }
