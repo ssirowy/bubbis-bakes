@@ -465,13 +465,6 @@ text {
     white-space: nowrap;
 }
 
-.menu-item-note {
-    margin: 0;
-    font-size: 13px;
-    font-style: italic;
-    color: var(--secondary-text-color);
-}
-
 @media only screen and (max-width: 800px) {
     header .nav {
         padding: 12px var(--gutter);
