@@ -167,8 +167,32 @@ main {
     object-fit: cover;
 }
 
-img.menu {
-    border-radius: 999px;
+/* Group photo: scale to fit without cropping; frame follows portrait aspect (no side letterboxing) */
+.hero-frame {
+    box-shadow: var(--shadow);
+    border-radius: var(--radius);
+    border: 8px solid rgba(255, 255, 255, 0.85);
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: color-mix(in srgb, var(--bubble-color), white 40%);
+}
+
+.hero-frame--full {
+    width: fit-content;
+    max-width: 100%;
+    margin-inline: auto;
+    min-width: 0;
+    background-color: transparent;
+}
+
+.hero-frame--full img {
+    display: block;
+    max-width: 100%;
+    max-height: min(72vh, 680px);
+    width: auto;
+    height: auto;
 }
 
 h1 {
@@ -278,10 +302,6 @@ text {
     font-size: 55px;
 }
 
-.portrait {
-    max-width: 200px;
-}
-
 .landscape {
     max-height: 200px;
 }
@@ -304,9 +324,15 @@ text {
 
 .menu-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: clamp(14px, 2.5vw, 22px);
-    margin-top: 14px;
+    grid-template-columns: 1fr;
+    gap: clamp(20px, 3vw, 28px);
+    margin-top: 18px;
+}
+
+@media only screen and (min-width: 640px) {
+    .menu-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
 }
 
 .menu-item {
@@ -318,31 +344,53 @@ text {
     border: 1px solid color-mix(in srgb, var(--footer-color), transparent 55%);
     border-radius: var(--radius-lg);
     box-shadow: var(--shadow-soft);
-    padding: 18px;
-    display: grid;
-    gap: 10px;
-    position: relative;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
     overflow: hidden;
+    transition: transform 180ms ease, box-shadow 180ms ease;
 }
 
-.menu-item::after {
-    content: "";
-    position: absolute;
-    inset: -2px -2px auto -2px;
-    height: 10px;
-    background: radial-gradient(circle at 12px 5px, rgba(165, 89, 103, 0.55) 0 3px, transparent 3.5px),
-        radial-gradient(circle at 34px 6px, rgba(74, 14, 128, 0.35) 0 2.5px, transparent 3px),
-        radial-gradient(circle at 56px 4px, rgba(165, 89, 103, 0.45) 0 2.5px, transparent 3px);
-    opacity: 0.6;
+.menu-item:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow);
 }
 
-.menu-item img.menu {
-    width: 96px;
-    height: 96px;
+.menu-item-media {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    overflow: hidden;
+    background: color-mix(in srgb, var(--bubble-color), black 4%);
+}
+
+.menu-item-media--tall {
+    aspect-ratio: 3 / 4;
+}
+
+.menu-item-media img {
+    width: 100%;
+    height: 100%;
     object-fit: cover;
-    border: 6px solid rgba(255, 255, 255, 0.85);
-    box-shadow: 0 12px 26px rgba(29, 14, 44, 0.12);
-    justify-self: center;
+    object-position: center;
+    display: block;
+}
+
+.menu-item-body {
+    padding: clamp(16px, 2.5vw, 20px) clamp(18px, 3vw, 22px) clamp(18px, 3vw, 22px);
+    text-align: center;
+    display: grid;
+    gap: 8px;
+}
+
+.menu-item-body h3 {
+    margin: 0;
+}
+
+.menu-item-body p {
+    margin: 0;
+    font-size: 15px;
+    line-height: 1.5;
 }
 
 .custom-order-text {
@@ -364,8 +412,8 @@ text {
         max-height: 420px;
     }
 
-    .portrait {
-        max-width: 90%;
+    .hero-frame--full img {
+        max-height: min(60vh, 520px);
     }
 
     footer {
