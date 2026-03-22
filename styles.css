@@ -398,6 +398,80 @@ text {
     margin: 0;
 }
 
+.menu-pricing {
+    margin-top: clamp(22px, 4vw, 32px);
+    width: 100%;
+    box-sizing: border-box;
+    padding: clamp(18px, 3vw, 24px) clamp(20px, 3vw, 26px);
+    background: linear-gradient(
+        180deg,
+        color-mix(in srgb, var(--bubble-color), white 18%),
+        var(--bubble-color)
+    );
+    border: 1px solid color-mix(in srgb, var(--footer-color), transparent 55%);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-soft);
+}
+
+.menu-pricing h3 {
+    font-family: var(--heading-font);
+    font-weight: 650;
+    font-size: clamp(18px, 2.2vw, 22px);
+    margin: 0 0 10px;
+    color: var(--main-text-color);
+}
+
+.menu-pricing-lede {
+    margin: 0 0 14px;
+    font-size: 15px;
+    line-height: 1.5;
+    color: color-mix(in srgb, var(--main-text-color), black 12%);
+}
+
+.pricing-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    gap: 10px;
+}
+
+.pricing-list li {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 8px 16px;
+    padding: 10px 0;
+    border-bottom: 1px solid color-mix(in srgb, var(--footer-color), transparent 78%);
+    font-size: 15px;
+    line-height: 1.45;
+}
+
+.pricing-list li:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+.pricing-label {
+    color: color-mix(in srgb, var(--main-text-color), black 8%);
+    flex: 1 1 12rem;
+}
+
+.pricing-value {
+    font-weight: 700;
+    color: var(--secondary-text-color);
+    font-variant-numeric: tabular-nums;
+    white-space: nowrap;
+}
+
+.menu-item-note {
+    margin: 0;
+    font-size: 13px;
+    font-style: italic;
+    color: var(--secondary-text-color);
+}
+
 @media only screen and (max-width: 800px) {
     header .nav {
         padding: 12px var(--gutter);
