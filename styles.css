@@ -227,6 +227,17 @@ h4 {
     font-weight: 650;
 }
 
+.inline-source-link {
+    color: color-mix(in srgb, var(--main-text-color), white 12%);
+    text-decoration: underline;
+    text-decoration-thickness: 1.5px;
+    text-underline-offset: 0.12em;
+}
+
+.inline-source-link:hover {
+    color: var(--main-text-color);
+}
+
 p {
     margin: 0 0 12px;
     color: color-mix(in srgb, var(--main-text-color), black 10%);
